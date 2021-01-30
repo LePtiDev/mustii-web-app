@@ -11,32 +11,16 @@
     <h1>Bienvenue</h1>
     <h2>Liste des projets</h2>
 
-    <h3>Projet 1</h3>
-    <ul>
-        <li>Nom du projet: </li>
-        <li>Description du projet: </li>
-        <li>Image du projet : </li>
-        <li>lien du projet : </li>
-    </ul>
 
-
-    <h3>Projet 2</h3>
-    <ul>
-        <li>Nom du projet: </li>
-        <li>Description du projet: </li>
-        <li>Image du projet : </li>
-        <li>lien du projet : </li>
-    </ul>
-
-
-    <h3>Projet 3</h3>
-    <ul>
-        <li>Nom du projet: </li>
-        <li>Description du projet: </li>
-        <li>Image du projet : </li>
-        <li>lien du projet : </li>
-    </ul>
-
+    @foreach($projects as $project)
+        <h3>Projet {{$project->id}}</h3>
+        <ul>
+            <li>Nom du projet: {{$project->title}}</li>
+            <li>Description du projet: {{$project->description}}</li>
+            <li>Image du projet : {{$project->image}}</li>
+            <li>lien du projet : {{$project->link}}</li>
+        </ul>
+    @endforeach
 
     <h2>Formulaire</h2>
 </body>
