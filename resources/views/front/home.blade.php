@@ -23,5 +23,18 @@
     @endforeach
 
     <h2>Formulaire</h2>
+
+    <form action="/" method="POST">
+        @csrf
+        <input type="text" name="name" placeholder="Votre nom" value="{{ old('name') }}">
+        <input type="email" name="email" placeholder="Votre email" value="{{ old('email') }}">
+        <input type="text" name="subject" placeholder="Sujet" value="{{ old('subject') }}">
+        <textarea name="description" placeholder="Votre demande" ></textarea>
+        <input type="submit" name="submit">
+    </form>
+
+    @error("name")
+        <p>{{$message}}</p>
+    @enderror
 </body>
 </html>
